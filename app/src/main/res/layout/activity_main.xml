@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="com.gjf.wc.activity.MainActivity">
+
+    <Button
+        android:id="@+id/bt_auth"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:text="授权微信" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="10sp"/>
+
+</LinearLayout>
