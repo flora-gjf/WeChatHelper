@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button button;
     private TextView textView;
 
-    private WechatLoginObserver mWechatLoginObserver = new WechatLoginObserver();
+    private WechatAuthObserver mWechatAuthObserver = new WechatAuthObserver();
 
     private LoginHandler mHandler = new LoginHandler(this);
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
 
-        WechatHelper.getInstance().removeWechatObserver(mWechatLoginObserver);
+        WechatHelper.getInstance().removeWechatObserver(mWechatAuthObserver);
     }
 
     private void initView() {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void auth() {
         textView.setText("");
 
-        WechatHelper.getInstance().addWechatObserver(mWechatLoginObserver);
+        WechatHelper.getInstance().addWechatObserver(mWechatAuthObserver);
         WechatHelper.getInstance().authorizeByWechat();
     }
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText("微信昵称为 :" + WechatInfoSPHelper.getWechatUserNickname());
     }
 
-    private class WechatLoginObserver extends WechatObserver {
+    private class WechatAuthObserver extends WechatObserver {
 
         @Override
         public void handleStateChange(int data) {
@@ -99,11 +99,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             switch (code) {
                 case WechatHelper.WECHAT_CHECK_SUCCESS:
-                    WechatHelper.getInstance().removeWechatObserver(activity.mWechatLoginObserver);
+                    WechatHelper.getInstance().removeWechatObserver(activity.mWechatAuthObserver);
                     activity.wechatAuthSuccess();
                     break;
                 case WechatHelper.WECHAT_CHECK_FAILURE:
-                    WechatHelper.getInstance().removeWechatObserver(activity.mWechatLoginObserver);
+                    WechatHelper.getInstance().removeWechatObserver(activity.mWechatAuthObserver);
                     activity.wechatAuthError();
                     break;
                 default:
