@@ -512,7 +512,7 @@ public class WechatHelper {
         String thumbUrl = params.getNetworkImageUrl();
 
         if (TextUtils.isEmpty(thumbUrl)) {
-            wechatShareLink(getDefaultBitmap(), params, shareListener);
+            wechatMomentsShareLink(getDefaultBitmap(), params, shareListener);
         } else {
             NetworkHandler<Bitmap> imgHandler = new NetworkHandler<Bitmap>() {
                 @Override
@@ -522,7 +522,7 @@ public class WechatHelper {
 
                 @Override
                 public void onFailure(int errorCode) {
-                    wechatShareLink(getDefaultBitmap(), params, shareListener);
+                    wechatMomentsShareLink(getDefaultBitmap(), params, shareListener);
                 }
             };
 
