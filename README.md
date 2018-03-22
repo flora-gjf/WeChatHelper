@@ -54,7 +54,7 @@
    mText | 分享内容| String类型
    mLinkUrl | 分享链接| String类型
    mNetworkImageUrl | 分享网络图片链接| String类型
-  mLocalBitmap | 分享本地图片| Bitmap类型
+   mLocalBitmap | 分享本地图片| Bitmap类型
 
 ### 备注
 
