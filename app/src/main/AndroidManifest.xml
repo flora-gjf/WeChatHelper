@@ -24,9 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.WechatShareActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="${applicationId}.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
